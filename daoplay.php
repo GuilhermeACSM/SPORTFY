@@ -55,7 +55,7 @@ $logado = isset($_SESSION['usuario_id']);
             <p class="title">Da o Play</p>
             <p class="subtitle">Encontre partidas e quadras disponíveis na sua região!</p>
             <div class="container has-text-centered">
-                <a href="cadastro.php" class="button is-light is-large">Cadastrar-se</a>
+                <a href="cadastro.php" class="button is-dark is-large">Cadastrar-se</a>
             </div>
         </div>
     </section>

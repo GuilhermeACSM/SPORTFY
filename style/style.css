@@ -410,7 +410,6 @@ p.account a:hover {
 @media screen and (max-width: 1023px) {
     .navbar-menu {
         color: #fff;
-        background-color: #ffffff00;
         box-shadow: 0 8px 16px rgba(10, 10, 10, .1);
         padding: .5rem 0;
     }

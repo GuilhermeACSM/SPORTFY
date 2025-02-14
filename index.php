@@ -48,7 +48,7 @@ $logado = isset($_SESSION['usuario_id']);
     </nav>
 
     <!-- Hero Section -->
-    <section id="campo" class="hero is-success is-medium">
+    <section id="campo" class="hero is-warning is-medium">
         <div class="hero-body has-text-centered">
             <p class="title">Encontre Seu Jogo</p>
             <p class="subtitle">Junte-se a jogadores perto de você e participe de partidas incríveis!</p>
@@ -69,7 +69,7 @@ $logado = isset($_SESSION['usuario_id']);
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="assets/futebol.jpg" alt="Futebol">
+                                <img src="img/fut3.jpg" alt="Futebol">
                             </figure>
                         </div>
                         <div class="card-content has-text-centered">
@@ -84,7 +84,7 @@ $logado = isset($_SESSION['usuario_id']);
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="assets/quadra.jpg" alt="Quadras">
+                                <img src="img/quadra.jpg" alt="Quadras">
                             </figure>
                         </div>
                         <div class="card-content has-text-centered">
@@ -99,7 +99,7 @@ $logado = isset($_SESSION['usuario_id']);
                     <div class="card">
                         <div class="card-image">
                             <figure class="image is-4by3">
-                                <img src="assets/evento.jpg" alt="Eventos">
+                                <img src="img/eventos.jpg" alt="Eventos">
                             </figure>
                         </div>
                         <div class="card-content has-text-centered">

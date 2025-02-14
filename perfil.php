@@ -3,7 +3,7 @@ require_once 'config.php';
 require_once 'auth.php';
 
 // Verifica se está logado
-verificaLogin();
+//verificaLogin();
 
 // Busca dados do usuário
 $conn = conectar();
