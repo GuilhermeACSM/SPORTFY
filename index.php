@@ -1,6 +1,7 @@
 <?php
 
-
+// Garante que a sessão seja iniciada antes de verificar o login
+session_start();
 
 // Verifica se o usuário está logado
 $logado = isset($_SESSION['usuario_id']);

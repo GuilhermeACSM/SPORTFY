@@ -67,12 +67,25 @@
 /*------------------ ESPORTES ----------------------*/
 
 
-
+#img-perfil{
+    padding-top: 6%;
+}
 
 /*-------------------- FOOTER ---------------------*/
-#section-login{
-    height: 67vh;
+#section-comp{
+    height: 80vh;
 }
+#section-edit{
+    height: 70vh;
+}
+#section-jogos{
+    height: 80vh;
+}
+
+#section-login{
+    height: 80vh;
+}
+
 .icon {
     align-items: center;
     display: inline-flex;
