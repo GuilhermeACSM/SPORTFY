@@ -1,11 +1,6 @@
 @charset "UTF-8";
 
 /* Reset */
-* {
-    padding: 0;
-    margin: 0;
-    font-family: var(--bebas);
-}
 
 /* Importação de fontes */
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lexend:wght@100..900&family=Smooch+Sans:wght@100..900&display=swap');
@@ -48,381 +43,65 @@
 
 .navbar-item, .navbar-link {
     color: #ffffff;
-    display: block;
-    line-height: 1.5;
-    padding: .5rem .75rem;
-    position: relative;
+
+
 }
 
 /*-------------- Body HOME ---------------*/
-.body-inicio {
-    background: url(../assets/fundo-texturizado-da-natureza-da-onda-de-areia-no-conceito-de-bem-estar.jpg);
-    background-position: center;
-    background-size: cover;
-}
 
 /*-------------- FORM LOGIN ---------------*/
-.login-form {
-    justify-content: center;
-    display: grid;
-    align-items: center;
-    margin: 10px;
-}
-
-.login-form h1 {
-    text-align: center;
-    font-size: 2.5rem;
-    color: #fff;
-    font-family: 'poppins', sans-serif;
-}
-
-.login-form h2 {
-    font-family: var(--arthos);
-    line-height: 40px;
-    margin-bottom: 5px;
-    font-size: 30px;
-    font-weight: 500;
-    color: #1b1a1a;
-    text-align: center;
-}
-
-.login-form .main {
-    display: flex;
-    margin: 30px 0;
-}
-
-.content {
-    flex-basis: 50%;
-    padding: 3em 3em;
-    box-shadow: 2px 9px 49px -17px rgba(0, 0, 0, 0.1);
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-}
-
-.form-img {
-    flex-basis: 50%;
-    background: #FFC72C;
-    background-size: cover;
-    padding: 40px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    align-items: center;
-    display: grid;
-}
-
-/* Botões */
-.btn, button, input {
-    border-radius: 35px;
-}
-
-.btn:hover,
-button:hover {
-    color: #ffc72c;
-    transition: 0.5s ease;
-}
-
-/* Estilo do formulário de login */
-.login-form form {
-    margin: 30px 0;
-}
-
-.login-form input {
-    outline: none;
-    margin-bottom: 15px;
-    font-stretch: 16px;
-    color: #999;
-    text-align: left;
-    padding: 14px 20px;
-    width: 100%;
-    display: inline-block;
-    box-sizing: border-box;
-    border: none;
-    background: #f7fafc;
-    transition: 0.3s ease;
-}
-
-.login-form input:focus {
-    color: black;
-    border: 1px solid black;
-}
-
-.login-form button {
-    font-size: 18px;
-    color: #fff;
-    width: 100%;
-    background: black;
-    border: none;
-    padding: 14px 15px;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
-
-/* Link de cadastro */
-p.account a {
-    text-decoration: none;
-    color: blue;
-}
-
-p.account a:hover {
-    text-decoration: underline;
-}
-
-.registre {
-    font-size: 17px;
-    text-align: center;
+.box {
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 .5em 1em -.125em rgba(10, 10, 10, .1), 0 0 0 1px rgba(10, 10, 10, .02);
+    color: #4a4a4a;
+    display: block;
+    padding: 1.25rem;
+    width: 50%;
+    margin: auto;
 }
 
 /*---------------------- SERVIÇOS ----------------------*/
-.container-services {
-    padding: 60px 0;
-    text-align: center;
-    width: 1090px;
-    border-radius: 10px;
-}
 
-.services {
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.services h2 {
-    font-family: var(--arthos);
-    margin-bottom: 40px;
-    color: #1b1a1a;
-    line-height: 40px;
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.service-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    margin: 5px;
-}
-
-.service-item {
-    background-color: #dfe6e9;
-    padding: 20px;
-    border-radius: 5px;
-    flex: 1;
-}
-
-.service-item h3 {
-    margin: 7px;
-    font-family: 'poppins', sans-serif;
-}
-
-.service-item p {
-    font-family: var(--bebas);
-}
 
 /*------------------ ESPORTES ----------------------*/
-.section-esportes {
-    margin-top: 100px;
-}
 
-.cards-esportes {
-    text-align: center;
-    justify-content: center;
-    display: flex;
-}
-
-.h2-esportes {
-    font-family: var(--arthos);
-    margin-bottom: 40px;
-    color: #1b1a1a;
-    line-height: 40px;
-    font-size: 30px;
-    font-weight: 500;
-    text-align: center;
-    justify-content: center;
-}
-
-.card {
-    margin: 10px;
-    background-color: #FFD700;
-    color: #1b1a1a;
-    width: 250px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-.card img {
-    width: 100%;
-    border-bottom: 5px solid #1b1a1a;
-}
-
-.card h2 {
-    font-size: 24px;
-    margin: 15px 0;
-}
-
-.card p {
-    font-size: 16px;
-    padding: 0 15px 15px;
-}
-
-.cards-esportes h2 {
-    font-family: var(--arthos);
-    color: black;
-    line-height: 40px;
-    font-size: 30px;
-    font-weight: 500;
-}
-
-.cards-esportes h3 {
-    color: black;
-    line-height: 40px;
-    font-size: 30px;
-    font-weight: 500;
-}
 
 
 
 /*-------------------- FOOTER ---------------------*/
-.footer {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #1b1a1a;
-    height: 170px;
-    margin-top: 50px;
+#section-login{
+    height: 67vh;
 }
-
-.social {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #fff;
 }
-
-.social a {
-    font-size: 20px;
-    display: inline-block;
-    border: 1px solid beige;
-    color: whitesmoke;
-    width: auto;
-    padding: 10px;
-    border-radius: 8px;
-}
-
-.social a:hover {
-    color: black;
-    background-color: #FFC72C;
-}
-
-.footer ul {
-    list-style: none;
-    text-align: center;
-    padding-bottom: 30px;
-}
-
-.footer ul li {
-    display: inline-block;
-    padding: 0px 15px;
-}
-
-.footer ul li a {
+a {
+    
+    cursor: pointer;
     text-decoration: none;
-    color: whitesmoke;
-    display: inline-block;
 }
 
-.footer ul li a:hover {
-    color: #FFC72C;
+a:hover{
+    color: #ffc72c;
 }
-
-.copy-right {
-    text-align: center;
-    color: whitesmoke;
-}
-
 /*---------------------- MEDIA QUERY ------------------------------------*/
 /*-------- Celular ----------*/
 @media screen and (max-width: 932px) {
-    .login-form .main {
-        margin: 10px;
-        flex-direction: column;
-    }
-
-    .login-form form {
-        margin-top: 30px;
-        margin-bottom: 10px;
-    }
-
-    .form-img {
-        border-radius: 0;
-        border-bottom-left-radius: 8px;
-        border-bottom-right-radius: 8px;
-        order: 2;
-    }
-
-    .content {
-        order: 1;
-        border-radius: 0;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-    }
-
-    .form-img video {
-        width: 100%;
-    }
-
-    /* serviços */
-    .service-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        margin: 5px;
-    }
-
-    /* esportes */
-    .cards-esportes {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    /* Iframe Plano */
-    .iframegeral {
-        height: 860px;
-    }
-
-    .section-cat {
-        border: none;
-    }
-
-    /* footer */
-    .footer {
-        height: 100%;
-    }
-
-    .footer ul {
-        flex-direction: column;
-        display: flex;
-    }
 }
 @media screen and (max-width: 1023px) {
     .navbar-menu {
-        color: #fff;
+        color: #ffffff;
         box-shadow: 0 8px 16px rgba(10, 10, 10, .1);
         padding: .5rem 0;
+        background-color: #363636;
     }
 }
 
-@media screen and (min-width: 769px), print {
-    .hero.is-medium .hero-body {
-        padding: 9rem 4.5rem;
-        background-image: url(/assets/Campo.jpg);
-    }
-    #campo{
-        background-image: url(/assets/Campo.jpg);
-    }
-}
 
 /* Media Queries para telas médias e grandes seguem da mesma estrutura */

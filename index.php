@@ -5,6 +5,7 @@
 // Verifica se o usuário está logado
 $logado = isset($_SESSION['usuario_id']);
 ?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -15,10 +16,11 @@ $logado = isset($_SESSION['usuario_id']);
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="assets/Frame 1.png" type="image/x-icon">
 </head>
 <body>
+    
     <!-- Navbar Responsiva -->
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">

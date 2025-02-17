@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="assets/Frame 1.png" type="image/x-icon">
     <title>Login - Sportfy</title>
 </head>
@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </nav>
 
-    <section class="section">
+    <section id="section-login" class="section">
         <div class="container">
             <div class="box">
                 <h1 class="title has-text-centered">Login</h1>
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                     </div>
                     <div class="has-text-centered">
-                        <p>Ainda não tem uma conta? <a href="cadastro.html">Cadastrar-se</a></p>
+                        <p>Ainda não tem uma conta? <a href="cadastro.php">Cadastrar-se</a></p>
                     </div>
                 </form>
             </div>
