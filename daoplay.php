@@ -122,8 +122,8 @@ $logado = isset($_SESSION['usuario_id']);
 
             </div>
 
-            <div class="has-text-centered mt-5">
-                <button class="button is-primary is-large">Criar Novo Jogo</button>
+            <div class="container has-text-centered">
+                <a href="perfil.php?Ajax=NovoJogo" class="button is-dark is-large">Criar Novo Jogo</a>
             </div>
 
         </div>

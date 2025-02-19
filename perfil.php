@@ -87,7 +87,13 @@ $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
                 <div class="column is-10">
                     <div id="conteudoDinamico">
-                        <?php include 'perfil_info.php'; ?> <!-- Carrega o perfil por padrão -->
+                        <?php
+                            if(!isset ($_GET['Ajax']) || ($_GET['Ajax']) != 'NovoJogo') {
+                                include 'perfil_info.php';
+                            }else {
+                                 include 'criar_evento.php'; // Carrega o perfil por padrão
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

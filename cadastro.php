@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
 require_once 'auth.php';
-session_start();
 
 // Verifica se o usuário está logado
 $logado = isset($_SESSION['usuario_id']);
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cidade = trim($_POST['cidade']);
     $estado = trim($_POST['estado']);
     $telefone = trim($_POST['telefone']);
-    
+
     // Validações
     if (empty($nome)) {
         $erro = "O nome é obrigatório";
@@ -32,14 +31,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $erro = "O telefone é obrigatório";
     } else {
         $conn = conectar();
-        
+
         try {
             $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, sexo, data_nascimento, cidade, estado, telefone) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             $stmt->execute([$nome, $email, $senha, $sexo, $data_nascimento, $cidade, $estado, $telefone]);
-            
+
             header("Location: login.php?cadastro=sucesso");
             exit;
-        } catch(PDOException $e) {
+        } catch (PDOException $e) {
             if ($e->getCode() == 23000) { // Erro de duplicidade
                 $erro = "Este email já está cadastrado";
             } else {
@@ -97,7 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <div class="box">
                 <h1 class="title has-text-centered">Cadastro do Atleta</h1>
-                
+
                 <?php if (isset($erro)): ?>
                     <div class="notification is-danger">
                         <?php echo $erro; ?>
@@ -108,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="field">
                         <label class="label">Nome</label>
                         <div class="control">
-                            <input class="input" type="text" name="nome" placeholder="Nome Completo" required 
+                            <input class="input" type="text" name="nome" placeholder="Nome Completo" required
                                 value="<?php echo isset($_POST['nome']) ? htmlspecialchars($_POST['nome']) : ''; ?>">
                         </div>
                     </div>
@@ -116,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <label class="label">Sexo</label>
                         <div class="control">
                             <label class="radio">
-                                <input type="radio" name="sexo" value="Masculino" 
+                                <input type="radio" name="sexo" value="Masculino"
                                     <?php echo (!isset($_POST['sexo']) || $_POST['sexo'] == 'Masculino') ? 'checked' : ''; ?>> Masculino
                             </label>
                             <label class="radio">
@@ -147,18 +146,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <option value="">Selecione o Estado</option>
                                     <?php
                                     $estados = array(
-                                        'AC' => 'Acre', 'AL' => 'Alagoas', 'AP' => 'Amapá',
-                                        'AM' => 'Amazonas', 'BA' => 'Bahia', 'CE' => 'Ceará',
-                                        'DF' => 'Distrito Federal', 'ES' => 'Espírito Santo',
-                                        'GO' => 'Goiás', 'MA' => 'Maranhão', 'MT' => 'Mato Grosso',
-                                        'MS' => 'Mato Grosso do Sul', 'MG' => 'Minas Gerais',
-                                        'PA' => 'Pará', 'PB' => 'Paraíba', 'PR' => 'Paraná',
-                                        'PE' => 'Pernambuco', 'PI' => 'Piauí', 'RJ' => 'Rio de Janeiro',
-                                        'RN' => 'Rio Grande do Norte', 'RS' => 'Rio Grande do Sul',
-                                        'RO' => 'Rondônia', 'RR' => 'Roraima', 'SC' => 'Santa Catarina',
-                                        'SP' => 'São Paulo', 'SE' => 'Sergipe', 'TO' => 'Tocantins'
+                                        'AC' => 'Acre',
+                                        'AL' => 'Alagoas',
+                                        'AP' => 'Amapá',
+                                        'AM' => 'Amazonas',
+                                        'BA' => 'Bahia',
+                                        'CE' => 'Ceará',
+                                        'DF' => 'Distrito Federal',
+                                        'ES' => 'Espírito Santo',
+                                        'GO' => 'Goiás',
+                                        'MA' => 'Maranhão',
+                                        'MT' => 'Mato Grosso',
+                                        'MS' => 'Mato Grosso do Sul',
+                                        'MG' => 'Minas Gerais',
+                                        'PA' => 'Pará',
+                                        'PB' => 'Paraíba',
+                                        'PR' => 'Paraná',
+                                        'PE' => 'Pernambuco',
+                                        'PI' => 'Piauí',
+                                        'RJ' => 'Rio de Janeiro',
+                                        'RN' => 'Rio Grande do Norte',
+                                        'RS' => 'Rio Grande do Sul',
+                                        'RO' => 'Rondônia',
+                                        'RR' => 'Roraima',
+                                        'SC' => 'Santa Catarina',
+                                        'SP' => 'São Paulo',
+                                        'SE' => 'Sergipe',
+                                        'TO' => 'Tocantins'
                                     );
-                                    foreach($estados as $sigla => $nome): ?>
+                                    foreach ($estados as $sigla => $nome): ?>
                                         <option value="<?php echo $sigla; ?>" <?php echo (isset($_POST['estado']) && $_POST['estado'] == $sigla) ? 'selected' : ''; ?>>
                                             <?php echo $nome; ?>
                                         </option>
@@ -167,10 +183,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                         </div>
                     </div>
+                    <script type="text/javascript">
+                        function mascara(telefone) {
+                            if (telefone.value.length == 0)
+                                telefone.value = '(' + telefone.value; //quando começamos a digitar, o script irá inserir um parênteses no começo do campo.
+                            if (telefone.value.length == 3)
+                                telefone.value = telefone.value + ') '; //quando o campo já tiver 3 caracteres (um parênteses e 2 números) o script irá inserir mais um parênteses, fechando assim o código de área.
+
+                            if (telefone.value.length == 10)
+                                telefone.value = telefone.value + '-'; //quando o campo já tiver 8 caracteres, o script irá inserir um tracinho, para melhor visualização do telefone.
+
+                        }
+                    </script>
                     <div class="field">
                         <label class="label">Telefone</label>
                         <div class="control">
-                            <input class="input" type="tel" name="telefone" placeholder="(xx)xxxx-xxxx" required
+                            <input maxlength="16" onkeypress="mascara(this)" class="input" type="tel" name="telefone" placeholder="(xx)xxxx-xxxx" required
                                 value="<?php echo isset($_POST['telefone']) ? htmlspecialchars($_POST['telefone']) : ''; ?>">
                         </div>
                     </div>
@@ -228,4 +256,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         });
     </script>
 </body>
+
 </html>
