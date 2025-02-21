@@ -77,6 +77,10 @@ $logado = isset($_SESSION['usuario_id']);
         </div>
     </section>
 
+    <div class="container has-text-centered">
+        <a href="perfil.php?Ajax=NovoJogo" class="button is-success is-large">Criar Novo Jogo</a>
+    </div>
+
     <!-- Seção de Partidas Disponíveis -->
     <section class="section">
         <div class="container">
@@ -108,6 +112,7 @@ $logado = isset($_SESSION['usuario_id']);
                     </div>
                 </div>
 
+
                 <!-- Card 3 -->
                 <div class="column is-4">
                     <div class="card">
@@ -120,10 +125,6 @@ $logado = isset($_SESSION['usuario_id']);
                     </div>
                 </div>
 
-            </div>
-
-            <div class="has-text-centered mt-5">
-                <button class="button is-primary is-large">Criar Novo Jogo</button>
             </div>
 
         </div>
