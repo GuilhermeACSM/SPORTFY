@@ -9,6 +9,7 @@ $logado = isset($_SESSION['usuario_id']);
 
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +21,9 @@ $logado = isset($_SESSION['usuario_id']);
     <link rel="stylesheet" href="./style/style.css">
     <link rel="shortcut icon" href="assets/Frame 1.png" type="image/x-icon">
 </head>
+
 <body>
-    
+
     <!-- Navbar Responsiva -->
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
@@ -51,15 +53,17 @@ $logado = isset($_SESSION['usuario_id']);
     </nav>
 
     <!-- Hero Section -->
-    <section id="campo" class="hero is-warning is-medium">
-        <div class="hero-body has-text-centered">
-            <p class="title">Encontre Seu Jogo</p>
-            <p class="subtitle">Junte-se a jogadores perto de você e participe de partidas incríveis!</p>
-            <?php if (!$logado): ?>
-                <a href="login.php" class="button is-dark is-large">Comece Agora</a>
-            <?php else: ?>
-                <a href="daoplay.php" class="button is-dark is-large">Encontrar Jogos</a>
-            <?php endif; ?>
+    <section id="campo" class="hero is-medium">
+        <div class="hero-body" id="hero-body">
+            <div class="highlight" id="highlight">
+                <p class="title">Encontre Seu Jogo</p>
+                <p class="subtitle">Junte-se a jogadores perto de você e participe de partidas incríveis!</p>
+                <?php if (!$logado): ?>
+                    <a href="login.php" class="button is-large">Comece Agora</a>
+                <?php else: ?>
+                    <a href="daoplay.php" class="button is-large">Localizar Jogos</a>
+                <?php endif; ?>
+            </div>
         </div>
     </section>
 
@@ -115,6 +119,23 @@ $logado = isset($_SESSION['usuario_id']);
         </div>
     </section>
 
+         <!-- Seção Sobre -->
+         <section class="info-section">
+        <div class="info-container">
+            <div class="info-content has-text-centered">
+                <h1 class="info-title">Sobre o Sportfy</h1>
+                <p>O <strong>Sportfy</strong> é uma plataforma criada para conectar pessoas através do esporte. Seu principal objetivo é facilitar a formação de times e partidas, tornando mais fácil encontrar jogadores disponíveis para completar um jogo.</p>
+                <p>Se estiver faltando jogadores para iniciar uma partida, basta criar um anúncio e aguardar confirmações. Da mesma forma, se você estiver procurando um jogo para participar, pode encontrar uma partida próxima a você.</p>
+                <p>Nosso objetivo é incentivar a prática esportiva, promover a socialização e eliminar barreiras para quem quer jogar.</p>
+                <p>Estamos alinhados com a <strong>ODS 3</strong> (Objetivos de Desenvolvimento Sustentável das Nações Unidas), que busca garantir o acesso à saúde de qualidade e promover o bem-estar para todos, em todas as idades.</p>
+                <h2 class="info-subtitle"><a href="login.php">🌟 Entre na onda e participe!</a></h2>
+                <p>Não fique de fora! Junte-se à comunidade do Sportfy e faça parte dessa rede de jogadores. O jogo só começa quando todos entram em campo! 🏆⚽🏀🎾</p>
+                <!-- Botão Teste -->
+                <!-- <a href="login.php" class="info-button">Junte-se Agora</a> -->
+            </div>
+        </div>
+    </section>
+
     <!-- Rodapé -->
     <footer class="footer has-background-dark has-text-white">
         <div class="content has-text-centered">
@@ -128,8 +149,16 @@ $logado = isset($_SESSION['usuario_id']);
         </div>
     </footer>
 
+    <!-- Imagem fixa no canto inferior esquerdo -->
+    <a href="https://brasil.un.org/pt-br/sdgs/3" target="_blank"><img src="assets/SaudeBemEstar.png" alt="Saúde e Bem-Estar" class="img-BemEstar" id="imgBemEstar"></a>
+
+    <div class="card-info" id="cardInfo">
+        <h1>Saúde e Bem-Estar</h1>
+        <p>Garantir o acesso à saúde de qualidade e promover o bem-estar para todos, em todas as idades</p>
+    </div>
+
     <script>
-        // Script para ativar o menu hamburguer
+        // Script para ativar o menu hambúrguer
         document.addEventListener('DOMContentLoaded', () => {
             const navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
             if (navbarBurgers.length > 0) {
@@ -143,6 +172,22 @@ $logado = isset($_SESSION['usuario_id']);
                 });
             }
         });
+
+        // Script para exibir/esconder o card ao passar o mouse
+        document.addEventListener("DOMContentLoaded", function() {
+            const imgBemEstar = document.getElementById("imgBemEstar");
+            const cardInfo = document.getElementById("cardInfo");
+
+            imgBemEstar.addEventListener("mouseover", function() {
+                cardInfo.style.display = "block";
+            });
+
+            imgBemEstar.addEventListener("mouseout", function() {
+                cardInfo.style.display = "none";
+            });
+        });
     </script>
+
 </body>
+
 </html>

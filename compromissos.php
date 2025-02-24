@@ -3,11 +3,14 @@ require_once 'config.php';
 require_once 'auth.php';
 
 
+
 // Buscar os eventos (jogos) no banco de dados
-/*$sql = "SELECT evento_nome, evento_data, evento_hora, evento_local, evento_esporte FROM eventos";
+/*
+$sql = "SELECT * FROM partidas";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-$eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);*/
+$eventos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+*/
 ?>
 
 <!DOCTYPE html>
