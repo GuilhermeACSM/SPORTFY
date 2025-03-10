@@ -1,7 +1,6 @@
 <?php
 require_once 'config.php';
 require_once 'auth.php';
-
 ?>
 
 <div class="box">
@@ -44,7 +43,7 @@ require_once 'auth.php';
         <div class="field">
             <label class="label">Local</label>
             <div class="control">
-                <input class="input" type="text" name="evento_local" placeholder="Digite o local do evento" required>
+                <input class="input" type="text" name="evento_local" placeholder="Digite o local do evento">
             </div>
         </div>
 
@@ -61,6 +60,14 @@ require_once 'auth.php';
                         <option value="outros">Outros</option>
                     </select>
                 </div>
+            </div>
+        </div>
+
+        <!-- Descrição do Evento -->
+        <div class="field">
+            <label class="label">Descrição</label>
+            <div class="control">
+                <textarea class="textarea" name="evento_descricao" maxlength="100" placeholder="Digite uma breve descrição do evento" required></textarea>
             </div>
         </div>
 

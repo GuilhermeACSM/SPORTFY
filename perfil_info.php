@@ -4,7 +4,7 @@ require_once 'auth.php';
 
 verificaLogin();
 $conn = conectar();
-$stmt = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
+$stmt = $conn->prepare("SELECT * FROM usuarios WHERE usuarios_id = ?");
 $stmt->execute([$_SESSION['usuario_id']]);
 $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
